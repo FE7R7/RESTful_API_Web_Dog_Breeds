@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dogs CRUD Actions</title>
+    
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    
+</head>
+<body>
+    <div class="d-flex">
+    
+        <!-- Side Menu -->
+        <nav class="nav flex-column p-3">
+            <a class="nav-link fw-bold" href="index.html">Home</a>
+            <a class="nav-link fw-bold" href="read_all.html">Display All</a>
+            <a class="nav-link fw-bold" href="crud.html">CRUD Actions</a>
+            <a class="nav-link fw-bold" href="gallery.html">Dogs Gallery</a>
+            <a class="nav-link fw-bold" href="login.html">Login</a>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="container">
+        
+            <h1 class="text-center">Dogs CRUD Actions</h1><br><br>
+
+            <!-- Button Group -->
+			<div class="top-menu">
+			    <button id="btnReadById" type="button" class="btn btn-primary">Read by ID</button>
+			    <button id="btnReadByBreed" type="button" class="btn btn-primary">Read by Breed</button>
+			    <button id="btnAdd" type="button" class="btn btn-success">Create</button>
+			    <button id="btnUpdate" type="button" class="btn btn-info">Update by ID</button>
+			    <button id="btnDelete" type="button" class="btn btn-warning">Delete by ID</button>
+ 			    <button id="btnNew" type="button" class="btn btn-success">Clean to Add</button>		    
+			</div>
+
+            <!-- Search Fields for Read by ID and Breed -->
+            <div class="container-search" id="searchFields">
+            
+                <div class="search-field">
+					<input id="searchId" type="text" class="form-control" placeholder="ID" maxlength="4" style="width: 60%; height: 120%; padding: 5% 10%; font-size: 100%; text-align: center; margin-left:-79%;">
+                </div>
+                <div class="search-field">
+                    <input id="searchKey" type="text" class="form-control" placeholder="Breed" maxlength="25" style="width: 90%; height: 120%; padding: 5% 10%; font-size: 100%; text-align: center; margin-left:-94%;">
+                </div>
+                <div class="search-field">
+					<input id="updateId" type="text" class="form-control" placeholder="ID" maxlength="4" style="width: 60%; height: 120%; padding: 5% 10%; font-size: 100%; text-align: center; margin-left:0%;">
+                </div>
+                <div class="search-field">
+					<input id="deleteId" type="text" class="form-control" placeholder="ID" maxlength="4" style="width: 60%; height: 120%; padding: 5% 10%; font-size: 100%; text-align: center; margin-left:0%;">
+                </div>
+            </div>
+
+            <!-- Card -->
+            <div class="card" style="width: 70%; margin: 4% auto; margin-left: 13%;">
+                <div class="card-body">
+                    <form id="crudForm">
+                        <div class="mb-3">
+                            <label for="dogId" class="form-label">Dog ID:</label>
+                            <input id="dogId" name="id" type="text" class="form-control" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="breed" class="form-label">Breed:</label>
+                            <input id="breed" name="breed" type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="size" class="form-label">Size:</label>
+                            <input id="size" name="size" type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="coat_length" class="form-label">Coat Length:</label>
+                            <input id="coat_length" name="coat_length" type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="temperament" class="form-label">Temperament:</label>
+                            <input id="temperament" name="temperament" type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exercise_needs" class="form-label">Exercise Needs:</label>
+                            <input id="exercise_needs" name="exercise_needs" type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="color" class="form-label">Color:</label>
+                            <input id="color" name="color" type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="grooming_needs" class="form-label">Grooming Needs:</label>
+                            <input id="grooming_needs" name="grooming_needs" type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="trainability" class="form-label">Trainability:</label>
+                            <input id="trainability" name="trainability" type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="compatibility_with_kids" class="form-label">Compatibility with Kids:</label>
+                            <input id="compatibility_with_kids" name="compatibility_with_kids" type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="intelligence" class="form-label">Intelligence:</label>
+                            <input id="intelligence" name="intelligence" type="text" class="form-control">
+                        </div>
+                        <!-- Hidden fields for picture and wikipedia -->
+                        <div id="pictureField" class="mb-3">
+                            <label for="picture" class="form-label">Picture:</label>
+                            <input id="picture" name="picture" type="text" class="form-control">
+                        </div>
+                        <div id="wikipediaField" class="mb-3">
+                            <label for="wikipedia" class="form-label">Wikipedia Info:</label>
+                            <input id="wikipedia" name="wikipedia" type="text" class="form-control">
+                        </div>
+                    </form>           
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Member Login Area</title>
+    
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    
+</head>
+<body>
+    <div class="d-flex">
+    
+        <!-- Side Menu -->
+        <nav class="nav flex-column p-3">
+            <a class="nav-link fw-bold" href="index.html">Home</a>
+            <a class="nav-link fw-bold" href="read_all.html">Display All</a>
+            <a class="nav-link fw-bold" href="crud.html">CRUD Actions</a>
+            <a class="nav-link fw-bold" href="gallery.html">Dogs Gallery</a>
+            <a class="nav-link fw-bold" href="login.html">Login</a>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="container">
+            <h1 class="text-center" style="margin-left:-4%">Member Login Area</h1><br><br>
+            
+             <!-- Button Group -->
+			<div class="top-menu">
+			    <button id="btnReadUserById" type="button" class="btn btn-primary">Read User</button>
+			    <button id="btnAddUser" type="button" class="btn btn-success">Create User</button>
+			    <button id="btnUpdateUser" type="button" class="btn btn-info">Update User</button>
+			    <button id="btnDeleteUser" type="button" class="btn btn-warning">Delete User</button>
+			</div>
+            
+
+            <!-- Card -->
+            <div class="card" style="width: 70%; height:65%; margin: 4% auto; margin-left: 13%; margin-top:4%;">
+                <div class="card-body">
+                
+					<form class="mt-4">
+
+                     	<div class="mb-3">
+						    <label for="name" class="form-label">Name:</label>
+						    <input id="name" type="text" class="form-control">
+						</div><br>
+						
+						<div class="mb-3">
+						    <label for="username" class="form-label">Username:</label>
+						    <input id="username" type="text" class="form-control">
+						</div><br>
+							
+						 <div class="mb-3">
+						     <label for="password" class="form-label">Password:</label>
+						     <input id="password" type="password" class="form-control">
+						 </div><br>
+						  
+						 <button type="submit" class="btn btn-primary" style="margin-left:1%;">Login</button>
+
+					</form>
+       				 
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
